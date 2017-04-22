@@ -80,13 +80,6 @@ module.exports = ({
             },
         ],
     },
-    resolve: {
-        modules: [
-            srcDir,
-            'node_modules',
-        ],
-        extensions: [ '*', '.js', '.jsx', '.css', '.scss', ],
-    },
     devServer: {
         port,
         host,
