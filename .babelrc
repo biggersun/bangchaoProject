@@ -1,29 +1,44 @@
 {
     "env": {
         "development": {
-            "presets": ["react"],
+            "presets": ["react", "stage-1"],
             "plugins": [
-                ["import", { "libraryName": "antd", "style": true }],
-                "transform-class-properties",
-                "transform-es2015-classes",
-                "transform-object-rest-spread"
-            ]
-        },
-        "development.hot": {
-            "presets": ["react"],
-            "plugins": [
-                ["import", { "libraryName": "antd", "style": true }],
+                ["import", {
+                    "libraryName": "material-ui",
+                    "libraryDirectory": "/",
+                    "camel2DashComponentName": false,
+                    }],
                 "transform-class-properties",
                 "transform-es2015-classes",
                 "transform-object-rest-spread",
-                "react-hot-loader/babel"
+                "transform-decorators-legacy"
+            ]
+        },
+        "development.hot": {
+            "presets": ["react", "stage-1"],
+            "plugins": [
+                ["import", {
+                    "libraryName": "material-ui",
+                    "libraryDirectory": "/",
+                    "camel2DashComponentName": false,
+                    }],
+                "transform-class-properties",
+                "transform-es2015-classes",
+                "transform-object-rest-spread",
+                "react-hot-loader/babel",
+                "transform-decorators-legacy"
             ]
         },
         "production": {
-            "presets": ["react", ["env", { modules: false }]],
+            "presets": ["react", "stage-1", ["env", { modules: false }]],
             "plugins": [
-                ["import", { "libraryName": "antd", "style": true }],
-                "transform-object-rest-spread"
+                ["import", {
+                    "libraryName": "material-ui",
+                    "libraryDirectory": "/",
+                    "camel2DashComponentName": false,
+                    }],
+                "transform-object-rest-spread",
+                "transform-decorators-legacy"
             ]
         }
     }

@@ -21,11 +21,12 @@ class App extends Component {
             this.setState({
                 initState: 1,
             })
-        }, 2000)
+        }, 500)
     }
 
     render() {
         const { initState, } = this.state
+        console.log(this.props)
         if (!initState) {
             return <MuiThemeProvider><Loading /></MuiThemeProvider>
         }
