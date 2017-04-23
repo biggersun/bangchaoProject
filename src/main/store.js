@@ -13,9 +13,20 @@ class formList {
     constructor(formList) {
         this.formList = formList;
     }
+    @computed getFormValue = (e, sth) => {
+        this.formList[sth] = e.target.value
+    }
 }
 
 const store = {
-    formList
+    formList: new formList({
+        name: '1231',
+        phoneNumbe: '',
+        address: '',
+        brand: '',
+        mutionType: '',
+        errType: '',
+        qaDes: '',
+    })
 }
 export default store

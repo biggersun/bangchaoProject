@@ -1,7 +1,7 @@
 import React, { Component, PropTypes, } from 'react'
 import { AppBar, Paper, TextField, RaisedButton, } from 'material-ui'
 
-import { observer } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import FixBoxForm from '../../components/fixBoxFrom'
 import './index.scss'
 
@@ -26,25 +26,22 @@ class FixIndex extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: this.props,
+            data: 'formList',
         }
         this.handleSubmit.bind(this)
     }
 
     handleSubmit() {
-        const params = this.state.data
-    }
-
-    handleOnChange(e) {
-
+        const { data: params } = this.state
     }
 
     render() {
-        console.log(this.props);
+        const { store } = this.props
+        console.log(store)
         return (
             <div>
                 <AppBar title="家用电器维修单" />
-                <FixBoxForm data={this.state.data} handleOnChange={this.handleOnChange} />
+                <FixBoxForm formList={formList.formList} handleChange={formList.formList.getFormValue} />
                 <RaisedButton
                     style={btnStyle}
                     primary={true}

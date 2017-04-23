@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider, } from 'mobx-react'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import {
@@ -13,7 +14,11 @@ injectTapEventPlugin()
 
 function render() {
     ReactDOM.render(
-        module.hot ? <AppContainer><App store={store} /></AppContainer> : <App store={store} />,
+        module.hot ?
+            <AppContainer>
+                <App store={store} />
+            </AppContainer> :
+            <App store={store} />,
         document.getElementById('app-container')
     )
 }

@@ -1,6 +1,5 @@
 import React, { Component, } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-
 import Loading from '../components/loading'
 import FixIndex from '../containers/FixIndex'
 
@@ -16,7 +15,7 @@ class App extends Component {
         this.initState()
     }
 
-    async initState() {
+    initState() {
         setTimeout(() => {
             this.setState({
                 initState: 1,
@@ -26,13 +25,13 @@ class App extends Component {
 
     render() {
         const { initState, } = this.state
-        console.log(this.props)
+        const { store } = this.props
         if (!initState) {
             return <MuiThemeProvider><Loading /></MuiThemeProvider>
         }
         return (
             <MuiThemeProvider>
-                <FixIndex />
+                <FixIndex store={store} />
             </MuiThemeProvider>
         )
     }
