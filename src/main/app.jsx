@@ -25,13 +25,12 @@ class App extends Component {
 
     render() {
         const { initState, } = this.state
-        const { store } = this.props
         if (!initState) {
             return <MuiThemeProvider><Loading /></MuiThemeProvider>
         }
         return (
             <MuiThemeProvider>
-                <FixIndex store={store} />
+                <FixIndex />
             </MuiThemeProvider>
         )
     }

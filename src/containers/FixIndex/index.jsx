@@ -1,7 +1,7 @@
 import React, { Component, PropTypes, } from 'react'
 import { AppBar, Paper, TextField, RaisedButton, } from 'material-ui'
-
-import { observer, inject } from 'mobx-react'
+import { toJS, observable, computed } from 'mobx'
+import { observer, Provider } from 'mobx-react'
 import FixBoxForm from '../../components/fixBoxFrom'
 import './index.scss'
 
@@ -21,27 +21,35 @@ const btnStyle = {
     marginTop: '1rem'
 }
 
+class orderForm {
+    @observable name = ''
+    @observable phoneNumbe = ''
+    @observable address = ''
+    @observable brand = ''
+    @observable mutionType = ''
+    @observable errType = ''
+    @observable qaDes = ''
+}
+
 @observer
 class FixIndex extends Component {
+    form = new orderForm()
     constructor(props) {
         super(props)
-        this.state = {
-            data: 'formList',
-        }
-        this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit() {
-        const { data: params } = this.state
+        console.log(toJS(this.form))
     }
 
     render() {
-        const { store } = this.props
-        console.log(store)
         return (
             <div>
                 <AppBar title="家用电器维修单" />
-                <FixBoxForm formList={formList.formList} handleChange={formList.formList.getFormValue} />
+                <Provider form={this.form}>
+                    <FixBoxForm />
+                </Provider>
                 <RaisedButton
                     style={btnStyle}
                     primary={true}
