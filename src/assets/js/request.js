@@ -24,7 +24,7 @@ async function request(method, url, params, opt = {}, httpOpt) {
         }
 
         if (showErrorMsg) {
-            message.error(e.errno === 4 ? e.data.msg : e.msg)
+            console.error(e.errno === 4 ? e.data.msg : e.msg)
         }
 
         throw e

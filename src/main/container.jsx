@@ -1,8 +1,10 @@
 import React, { Component, } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import App from './app'
+import PropTypes from 'prop-types'
 
-const propTypes = {}
+const propTypes = {
+    children: PropTypes.object,
+}
 
 const defaultProps = {}
 

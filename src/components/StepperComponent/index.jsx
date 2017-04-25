@@ -5,10 +5,12 @@ import {
   StepLabel,
   StepContent,
 } from 'material-ui/Stepper'
-import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
+import { FlatButton, RaisedButton, Paper, } from 'material-ui'
+import PropTypes from 'prop-types'
 
-const propTypes = {}
+const propTypes = {
+    data: PropTypes.Object,
+}
 
 const defaultProps = {}
 
@@ -70,7 +72,7 @@ class StepperComponent extends Component {
         const { finished, stepIndex, } = this.state
         const { data, } = this.props
         return (
-            <div style={{ maxWidth: 380, maxHeight: 400, margin: 'auto', }}>
+            <Paper style={{ maxWidth: 380, margin: 'auto', }}>
                 <Stepper activeStep={stepIndex} orientation="vertical">
                     {data.map(item => <Step key={item.id}>
                         <StepLabel>{item.title}</StepLabel>
@@ -83,18 +85,16 @@ class StepperComponent extends Component {
                 </Stepper>
                 {finished && (
                 <p style={{ margin: '20px 0', textAlign: 'center', }}>
-                    <a
-                        href="#"
+                    <RaisedButton
+                        label="返回首步查看详细进度"
                         onClick={(event) => {
                             event.preventDefault()
                             this.setState({ stepIndex: 0, finished: false, })
                         }}
-                    >
-                点击
-                </a> 返回首步查看详细进度
-            </p>
+                    />
+                </p>
             )}
-            </div>
+            </Paper>
         )
     }
 }

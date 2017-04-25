@@ -1,9 +1,15 @@
 import React, { Component, } from 'react'
+import { RaisedButton, } from 'material-ui'
+import { browserHistory, } from 'react-router'
 import StepperComponent from '../../components/StepperComponent'
 
 const propTypes = {}
 
 const defaultProps = {}
+
+const btnStyle = {
+    marginTop: '1rem',
+}
 
 class Schedule extends Component {
     constructor(props) {
@@ -56,7 +62,18 @@ class Schedule extends Component {
 
     render() {
         const { stepper, } = this.state
-        return <div><StepperComponent data={stepper} /></div>
+        return (
+            <div>
+                <StepperComponent data={stepper} />
+                <RaisedButton
+                    style={btnStyle}
+                    primary
+                    label="查看我的提交记录"
+                    fullWidth
+                    onTouchTap={() => browserHistory.push('serverList')}
+                />
+            </div>
+        )
     }
 }
 
