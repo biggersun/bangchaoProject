@@ -6,7 +6,7 @@ yarn
 yarn run start
 ```
 
-##build
+## build
 
 ```sh
 yarn build
