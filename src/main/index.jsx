@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import { Router, browserHistory, } from 'react-router'
+import { Router, hsahHistory, browserHistory, } from 'react-router'
 import {
     AppContainer,
 } from 'react-hot-loader'
@@ -21,7 +21,11 @@ function render() {
                     key={process.env.NODE_ENV !== 'production' ? Math.random() : false}
                 />
             </AppContainer> :
-            <Container />,
+            <Router
+                routes={routes}
+                history={hsahHistory}
+                key={process.env.NODE_ENV !== 'production' ? Math.random() : false}
+            />,
         document.getElementById('app-container')
     )
 }
