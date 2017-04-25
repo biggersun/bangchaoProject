@@ -1,9 +1,9 @@
-import React, { Component, PropTypes, } from 'react'
+import React, { Component, } from 'react'
+import { browserHistory, } from 'react-router'
 import { AppBar, Paper, TextField, RaisedButton, } from 'material-ui'
 import { toJS, observable, computed } from 'mobx'
 import { observer, Provider } from 'mobx-react'
-import FixBoxForm from '../../components/fixBoxFrom'
-import './index.scss'
+import FixBoxForm from '../../components/FixBoxFrom'
 
 const propTypes = {}
 
@@ -12,9 +12,9 @@ const defaultProps = {
     phoneNumbe: '',
     address: '',
     brand: '',
-    mutionType: '',
-    errType: '',
-    qaDes: '',
+    kind: '',
+    type: '',
+    detail: '',
 }
 
 const btnStyle = {
@@ -26,28 +26,29 @@ class orderForm {
     @observable phoneNumbe = ''
     @observable address = ''
     @observable brand = ''
-    @observable mutionType = ''
-    @observable errType = ''
-    @observable qaDes = ''
+    @observable kind = ''
+    @observable type = ''
+    @observable detail = ''
 }
-
-@observer
+const form = new orderForm()
 class FixIndex extends Component {
-    form = new orderForm()
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
+        console.log(form)
+        console.log(this.props)
     }
-
     handleSubmit() {
-        console.log(toJS(this.form))
+        console.log(toJS(form))
+        browserHistory.push('schedule')
     }
 
     render() {
+        console.log("FixIndex")
         return (
             <div>
                 <AppBar title="家用电器维修单" />
-                <Provider form={this.form}>
+                <Provider form={form}>
                     <FixBoxForm />
                 </Provider>
                 <RaisedButton

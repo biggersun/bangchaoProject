@@ -27,16 +27,11 @@ module.exports = () => webpackMerge(commonConfig(), {
     entry: {
         vendor: [
             'babel-polyfill',
-            'whatwg-fetch',
             'moment',
             'react',
             'react-dom',
             'classnames',
-            'react-redux',
             'react-router',
-            'react-router-redux',
-            'redux',
-            'redux-thunk',
             'urijs',
         ],
         app: appJsPath,

@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-
+import { Router, browserHistory, } from 'react-router'
 import {
     AppContainer,
 } from 'react-hot-loader'
+import routes from './routes'
 
-import App from './app'
+import Container from './app'
 
 injectTapEventPlugin()
 
@@ -14,9 +15,13 @@ function render() {
     ReactDOM.render(
         module.hot ?
             <AppContainer>
-                <App />
+                <Router
+                    routes={routes}
+                    history={browserHistory}
+                    key={process.env.NODE_ENV !== 'production' ? Math.random() : false}
+                />
             </AppContainer> :
-            <App />,
+            <Container />,
         document.getElementById('app-container')
     )
 }
@@ -24,5 +29,5 @@ function render() {
 render()
 
 if (module.hot) {
-    module.hot.accept('./app', render)
+    module.hot.accept('./container', render)
 }

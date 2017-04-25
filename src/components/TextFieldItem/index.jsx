@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { TextField, } from 'material-ui'
 import { observer, inject } from 'mobx-react'
 

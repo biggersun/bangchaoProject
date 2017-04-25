@@ -1,4 +1,4 @@
-import Loading from 'components/Loading'
+import Loading from '../../components/Loading'
 import * as http from './http'
 
 const loading = Loading.newInstance()

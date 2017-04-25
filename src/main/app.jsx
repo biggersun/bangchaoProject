@@ -1,6 +1,6 @@
 import React, { Component, } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Loading from '../components/loading'
+import Loading from '../components/Loading'
 import FixIndex from '../containers/FixIndex'
 
 class App extends Component {
@@ -9,6 +9,7 @@ class App extends Component {
         this.state = {
             initState: null,
         }
+        console.log('app')
     }
 
     componentDidMount() {

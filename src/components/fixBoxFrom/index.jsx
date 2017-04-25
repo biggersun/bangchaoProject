@@ -1,10 +1,6 @@
-import React, { PropTypes, } from 'react'
+import React from 'react'
 import { Paper, } from 'material-ui'
 import TextFieldItem from '../TextFieldItem'
-
-const propTypes = {}
-
-const defaultProps = {}
 
 const style = {
     display: 'flex',
@@ -38,23 +34,19 @@ const FixBoxFrom = () => <div>
         <TextFieldItem
             hintText="请输入您的要维修的机器类型"
             floatingLabelText="机器类别"
-            name="mutionType"
+            name="kind"
         />
         <TextFieldItem
             hintText="请输入故障类型"
             floatingLabelText="故障类型"
-            name="errType"
+            name="type"
         />
         <TextFieldItem
             hintText="请输入您的问题描述"
             floatingLabelText="问题描述"
-            name="qaDes"
+            name="detail"
         /><br />
     </Paper>
 </div>
-
-FixBoxFrom.propTypes = propTypes
-
-FixBoxFrom.defaultProps = defaultProps
 
 export default FixBoxFrom
