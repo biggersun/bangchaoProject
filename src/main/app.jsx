@@ -9,7 +9,6 @@ class App extends Component {
         this.state = {
             initState: null,
         }
-        console.log('app')
     }
 
     componentDidMount() {

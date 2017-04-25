@@ -7,8 +7,6 @@ import {
 } from 'react-hot-loader'
 import routes from './routes'
 
-import Container from './app'
-
 injectTapEventPlugin()
 
 function render() {

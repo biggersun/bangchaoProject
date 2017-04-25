@@ -11,11 +11,9 @@ class Container extends Component {
         super(props)
         this.state = {
         }
-        console.log('container')
     }
 
     render() {
-        console.log(this.props)
         const { children, } = this.props
         return (
             <MuiThemeProvider>

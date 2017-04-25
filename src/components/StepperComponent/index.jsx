@@ -46,7 +46,7 @@ class StepperComponent extends Component {
         return (
             <div style={{ margin: '12px 0', }}>
                 <RaisedButton
-                    label={stepIndex === data.length - 1 ? 'Finish' : 'Next'}
+                    label={stepIndex === data.length - 1 ? '完成' : '下一步'}
                     disableTouchRipple
                     disableFocusRipple
                     primary
@@ -55,7 +55,7 @@ class StepperComponent extends Component {
                 />
                 {step > 0 && (
                 <FlatButton
-                    label="Back"
+                    label="返回"
                     disabled={stepIndex === 0}
                     disableTouchRipple
                     disableFocusRipple
