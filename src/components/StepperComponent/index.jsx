@@ -9,7 +9,7 @@ import { FlatButton, RaisedButton, Paper, } from 'material-ui'
 import PropTypes from 'prop-types'
 
 const propTypes = {
-    data: PropTypes.Object,
+    data: PropTypes.array,
 }
 
 const defaultProps = {}
